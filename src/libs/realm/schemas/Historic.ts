@@ -9,8 +9,18 @@ type GenerateProps = {
 }
 
 export class Historic extends Realm.Object<Historic> {
-  // campos que precisarão ser informadoas para criar o historico
+  // os campos que serão armazenados
+  _id!: string
+  user_id!: string
+  license_plate!: string
+  description!: string
+  status!: string
+  created_at!: string
+  updated_at!: string
+  // nos parametros os campos que precisarão ser informadoas para criar o historico
+  // pos os outros campos são gerados automaticamente ou são pefos de outrol lugar
   static generate({ user_id, description, license_plate }: GenerateProps) {
+    // e retorna os dados que serão guardados no banco
     return {
       _id: new Realm.BSON.UUID(),
       user_id,

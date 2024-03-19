@@ -16,6 +16,7 @@ import { SignIn } from './src/screens/SignIn'
 import { Routes } from './src/routes'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { RealmProvider } from './src/libs/realm'
+import theme from './src/theme'
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold, })
@@ -26,7 +27,7 @@ export default function App() {
   return (
     // acessa a aplicação do realm para que seja possivel acompanhar os dados de
     <AppProvider id={REALM_DB_ID}>
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{flex: 1, backgroundColor: theme.COLORS.GRAY_800}}>
 
         <StatusBar
           barStyle="light-content"
@@ -39,6 +40,7 @@ export default function App() {
         se ele estiver logado vai ser direcionado para home
       */}
         <UserProvider fallback={SignIn}>
+          {/* para que a aplicação tenha acesso ao banco e precisa estar dentro do UserProvider para que ele teha acesso ao user autenticado   */}
           <RealmProvider>
             <Routes />
           </RealmProvider>
