@@ -1,0 +1,26 @@
+{
+  "cli": {
+    "version": ">= 7.6.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "production":{
+        "env": {
+          "REALM_DB_ID": "application-0-ptjmv",
+          "ANDROID_CLIENT_ID": "794787336925-t0ml91vinhun8vfslj324144bgilp3lk.apps.googleusercontent.com",
+          "WEB_CLIENT_ID":"794787336925-alr3vf9kghephhls4ckd4sjh0491lnlu.apps.googleusercontent.com"
+        }
+      }
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

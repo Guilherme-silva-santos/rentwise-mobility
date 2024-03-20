@@ -9,6 +9,7 @@ type Props = TextInputProps & {
 }
 
 // foi transformado em const para que seja possivel egar as referencias atraves do forwardRef
+// pois como o componente não é só um text input é necessário passar apenas para o text input
 const TextAreaInput = forwardRef<TextInput, Props>(
   ({ label, ...rest }, ref) => {
     return (
