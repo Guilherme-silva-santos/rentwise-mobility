@@ -1,6 +1,7 @@
 /* eslint-disable react/no-children-prop */
 /* eslint-disable camelcase */
 /* eslint-disable prettier/prettier */
+import 'react-native-get-random-values'
 import { StatusBar } from 'react-native'
 import {
   useFonts,
